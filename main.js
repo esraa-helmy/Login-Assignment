@@ -115,6 +115,22 @@ function logOut () {
 }
 
 
+// & Clear SignUp Data Function
+function clearSignUpData(){
+    signUpNameEl.value ='';
+    signUpEmailEl.value ='';
+    signUpPasswordEl.value ='';
+
+}
+
+// & Clear Login Data Form
+function clearLoginData(){
+    loginEmailEL.value ='';
+    loginPasswordEl.value ='';
+}
+
+
+
 // ^ Validation Functions--------------------------------------------
 function validateName(){
     let regexName = /^[A-Z][a-z]{3,8}$/;
@@ -173,7 +189,9 @@ function passwordValidation () {
 signUpEl.addEventListener('click',displaySinUpForm);
 signInEl.addEventListener('click',displayLogInForm);
 signUpBtnEl.addEventListener('click',signUpForm);
+signUpBtnEl.addEventListener('click',clearSignUpData);
 loginBtnEl.addEventListener('click',loginForm);
+loginBtnEl.addEventListener('click',clearLoginData);
 logoutBtnEl.addEventListener('click',logOut)
 
 // ^ Validation Events ----------------------------
