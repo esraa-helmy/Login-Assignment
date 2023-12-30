@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/mediaQuery.css">
+    <title>Login</title>
+</head>
+<body>
+
+    <div class=" w-100 min-vh-100 bg-main-color">
+        <nav class="navbar navbar-expand-lg navbar-dark group card-shadow d-none" id="navBar">
+            <div class="container">
+                <a class="navbar-brand" href="#">SMART LOGIN</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+    
+                        <li class="nav-item ">
+                            <a class="text-white btn btn-outline-warning " id="logoutBtn">Logout</a>
+                        </li>
+    
+    
+                    </ul>
+    
+                </div>
+            </div>
+        </nav>
+        <div class="pt-5"> 
+            <div class=" d-flex justify-content-center align-items-center p-5 ">
+                <div class="content p-5 bg-main-color card-shadow w-65">
+                    <h1 class="text-center pb-3 d-none" id="welcome"></h1>
+                    <h1 class="text-center pb-2 d-block my-2" id="loginHeader">Smart Login System</h1>
+                    <div class="login d-block" id="loginForm">
+                        <input type="email" name="email" id="loginEmail" placeholder="Enter Your Email" class="inputs form-control mb-3">
+                        <input type="password" name="Password" id="loginPassword" placeholder="Enter Your Password" class=" inputs form-control mb-3">
+                        <p class="text-danger d-none text-center" id="loginAlert">Incorrect Email or Password</p>
+                        <button class="btn btn-outline-info w-100 my-3" id="loginBtn">Login</button>
+                        <p class="text-white text-center">Don’t have an account? <span class="text-white" id="signUp">Sign Up</span></p>
+                    </div>
+                    <div class="signUp d-none" id="signUPForm">
+                        <input type="text" name="email" id="signUpName" placeholder="Enter Your Name" class="inputs form-control mb-3">
+                        <p class="text-danger d-none" id="nameAlert">Please Enter Name Start With Capital Letter and at least 3 character</p>
+                        <input type="email" name="email" id="signUpEmail" placeholder="Enter Your Email" class="inputs form-control mb-3">
+                        <p class="text-danger d-none" id="emailAlert">Please Enter Valid Email like 'esraa@gmail.com'</p>
+                        <input type="password" name="Password" id="signUpPassword" placeholder="Enter Your Password" class=" inputs form-control mb-3">
+                        <p class="text-danger d-none" id="passwordAlert">Minimum eight characters, at least one letter, one number and one special character</p>
+                        <p class="text-success text-center  d-none" id="successAlert">Success</p>
+                        <button class="btn btn-outline-info w-100 my-3" id="signUpBtn">Sign Up</button>
+                        <p class="text-white text-center">Don’t have an account? <span class="text-white" id="signIn"> Sign In</span></p>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
