@@ -18,6 +18,7 @@ let emailAlertEl = document.getElementById("emailAlert");
 let passwordAlertEl =document.getElementById("passwordAlert");
 let successAlertEl =document.getElementById("successAlert");
 let loginAlertEl = document.getElementById("loginAlert");
+let emailExistsAlert = document.getElementById("emailExistsAlert")
 // & After Login Form-------------------------------------------------
 let navBarEl = document.getElementById("navBar");
 let welcomeEl = document.getElementById("welcome");
@@ -40,17 +41,35 @@ function displayLogInForm () {
 // ~ Function Of Sign Up Data
 function signUpForm () {
     if ( validateName() && emailValidation () && passwordValidation ()) {
-        var signUpData = {
-            name: signUpNameEl.value,
-            email:signUpEmailEl.value,
-            password:signUpPasswordEl.value
-    
-        }
-        console.log(signUpData)
-        signUpList.push(signUpData)
-        console.log(signUpList);
-        localStorage.setItem("loginData",JSON.stringify(signUpList))
-        successAlertEl.classList.remove('d-none');
+        
+
+        var isEmailExist = false;
+        for (let i = 0; i < signUpList.length; i++) {
+            if (signUpEmailEl.value === signUpList[i].email) {
+              isEmailExist = true;
+              break; // Email exists, exit the loop
+            }
+          }
+      
+          if (isEmailExist) {
+            emailExistsAlert.classList.remove('d-none');
+            successAlertEl.classList.add('d-none');
+           
+          } else {
+            var signUpData = {
+                name: signUpNameEl.value,
+                email:signUpEmailEl.value,
+                password:signUpPasswordEl.value
+        
+            }
+            console.log(signUpData)
+            signUpList.push(signUpData)
+            console.log(signUpList);
+            localStorage.setItem("loginData",JSON.stringify(signUpList))
+            successAlertEl.classList.remove('d-none');
+            emailExistsAlert.classList.add('d-none');
+            
+          }
        
 
         
